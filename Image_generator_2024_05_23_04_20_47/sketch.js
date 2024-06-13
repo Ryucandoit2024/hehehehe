@@ -2,7 +2,7 @@ var pictureList; // this variable is used in preload() and in draw() so we creat
 
 let angle = 0;
 let stepSize = 5;
-let radius = 20;
+let radius = 200;
 let numParticles = 100;
 let particles = [];
 
