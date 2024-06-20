@@ -1,5 +1,6 @@
 var pictureList; //this variable is used in preload() and in draw() so we create it outside of those sections.
 var pictureList2;
+var pictureList3;
 let catImg;
 
 function preload() {
@@ -19,6 +20,14 @@ function preload() {
   //use a for loop to load all images into the array
   for (var i = 7; i < imgCount2; i++) {
     pictureList2[i] = loadImage((i + 1) + ".png");
+  }
+
+  pictureList3 = [];
+  
+  var imgCount3 = 18; //total number of images
+  //use a for loop to load all images into the array
+  for (var i = 0; i < imgCount3; i++) {
+    pictureList3[i] = loadImage((i + 1) + ".png");
   }
 }
 
@@ -72,7 +81,7 @@ function draw() {
     var y = int(random(-100, 400));
      
     image(randomImage, x, y, randomImage.width, randomImage.height);
-    rotate(HALF_PI / 11.25)
+    rotate(HALF_PI / 11.25);
   }
 
   
@@ -98,16 +107,29 @@ function draw() {
 
   for (var i = 0; i < n; i++) {
     
-    var r = int(random(0, 14)); 
+    var r = int(random(9, 14)); 
     var randomImage2 = pictureList2[r] 
     
-    var x = 150;
-    var y = -10;
+    var x = 130;
+    var y = 20;
      
     image(randomImage2, x, y, 200, 200);
-    
+
   }
 
+  var n = 1; //눈images
+
+  for (var i = 0; i < n; i++) {
+    
+    var r = int(random(15, 18)); 
+    var randomImage3 = pictureList3[r] 
+    
+    var x = 180;
+    var y = 40;
+     
+    image(randomImage3, x, y, 330, 300);
+  
+  }
 }
 
 function mouseClicked() {
